@@ -11,4 +11,12 @@ export default {
     message: "Unauthorized",
     statusCode: 401,
   },
+  Forbidden: {
+    message: "Forbidden",
+    statusCode: 403,
+  },
+  NotFound: {
+    message: "Not Found",
+    statusCode: 404,
+  },
 };

@@ -11,7 +11,7 @@ class AuthController {
       return next(ApiError.BadRequest());
     }
 
-    const user = UserService.findUser(username);
+    const user = UserService.findByUsername(username);
 
     if (user && user.password == password) {
       const token = TokenService.generate({ id: user.id });
@@ -29,12 +29,12 @@ class AuthController {
       return next(ApiError.BadRequest());
     }
 
-    const user = UserService.findUser(username);
+    const user = UserService.findByUsername(username);
 
     if (user) {
       return next(ApiError.BadRequest("User already exists."));
     } else {
-      const user = UserService.createUser(username, password);
+      const user = UserService.create(username, password);
       const token = TokenService.generate({ id: user.id });
       res.json({
         accessToken: token,

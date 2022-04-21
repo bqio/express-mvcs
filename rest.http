@@ -1,4 +1,5 @@
 @host=http://localhost:3000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNTM3NjUwLCJleHAiOjE2NTA1NDEyNTB9.L9zIolIbi5tkkRq22V-lUyTBnqNjmZHgTd10IEAYbg8
 
 POST {{host}}/auth/signin
 Content-Type: application/json
@@ -20,5 +21,29 @@ Content-Type: application/json
 
 ###
 
-GET {{host}}/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNTIyOTExLCJleHAiOjE2NTA1MjI5MzF9.hOsXhEcr5AI-bUwPSoABsCKVGV4KLxQASdjMprT57N0
+GET {{host}}/posts
+Authorization: Bearer {{token}}
+
+
+###
+
+POST {{host}}/posts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Simple Post 3",
+  "body": "Content"
+}
+
+###
+
+PUT {{host}}/posts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Simple Data 2",
+  "body": "Content 2"
+}

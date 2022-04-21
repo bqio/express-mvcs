@@ -10,6 +10,7 @@ export default function errorMiddleware(err, req, res, next) {
       },
     });
   }
+  console.log(err);
   return res.status(httpErrors.InternalServerError.statusCode).json({
     error: {
       message: httpErrors.InternalServerError.message,

@@ -3,7 +3,7 @@ import Database from "../db.js";
 class UserService {
   constructor() {}
 
-  findUser(username) {
+  findByUsername(username) {
     for (let user of Database.getUsers()) {
       if (user.username === username) {
         return user;
@@ -12,7 +12,7 @@ class UserService {
     return null;
   }
 
-  createUser(username, password) {
+  create(username, password) {
     return Database.addUser({
       username,
       password,
