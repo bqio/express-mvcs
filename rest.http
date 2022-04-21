@@ -1,0 +1,24 @@
+@host=http://localhost:3000
+
+POST {{host}}/auth/signin
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123"
+}
+
+###
+
+POST {{host}}/auth/signup
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123"
+}
+
+###
+
+GET {{host}}/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNTIxODM0fQ.EIWpythSXrCxaOi3o8Vrmmm1v0XtyAQO5NmieKU0kBk

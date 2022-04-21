@@ -1,0 +1,21 @@
+{
+  "name": "express-mvcs",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "watch": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "bqio",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
